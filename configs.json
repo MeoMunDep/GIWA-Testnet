@@ -1,2 +1,7 @@
 {
+  "bridgeL1toL2": {
+    "enabled": true,
+    "count": 2,
+    "amountEth": 0.01
+  }
 }
