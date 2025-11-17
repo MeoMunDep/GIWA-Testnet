@@ -62,12 +62,12 @@ Set up the following files **before running the bot** (details below):
 ```json
 {
   "proxyMode": "round",
-  "delayEachWallet": [5, 8],
+  "delayEachWallet": [1, 1],
   "timeToRestartAllWallets": 300,
   "howManyWalletsRunInOneTime": 1,
 
   "bridgeL1toL2": {
-    "enabled": false,
+    "enabled": true,
     "count": 1,
     "amount": 0.0001
   },
@@ -83,7 +83,15 @@ Set up the following files **before running the bot** (details below):
   "sendERC20": {
     "enabled": true,
     "amount": 1000,
-    "times": 1
+    "count": 1
+  },
+  "deployERC721": {
+    "enabled": true,
+    "count": 1
+  },
+  "deployDomain": {
+    "enabled": true,
+    "count": 1
   }
 }
 ```
