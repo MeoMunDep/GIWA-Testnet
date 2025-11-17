@@ -76,12 +76,12 @@ create_default_configs() {
     cat > configs.json << EOL
 {
   "proxyMode": "round",
-  "delayEachWallet": [5, 8],
+  "delayEachWallet": [1, 1],
   "timeToRestartAllWallets": 300,
   "howManyWalletsRunInOneTime": 1,
 
   "bridgeL1toL2": {
-    "enabled": false,
+    "enabled": true,
     "count": 1,
     "amount": 0.0001
   },
@@ -97,7 +97,15 @@ create_default_configs() {
   "sendERC20": {
     "enabled": true,
     "amount": 1000,
-    "times": 1
+    "count": 1
+  },
+  "deployERC721": {
+    "enabled": true,
+    "count": 1
+  },
+  "deployDomain": {
+    "enabled": true,
+    "count": 1
   }
 }
 EOL
@@ -130,7 +138,7 @@ print_green "Configuration files have been checked."
 
 print_yellow "Checking dependencies..."
 cd "$MODULES_DIR"
-npm install user-agents axios meo-forkcy-colors meo-forkcy-utils meo-forkcy-proxy meo-forkcy-logger ethers 
+npm install user-agents axios meo-forkcy-colors meo-forkcy-utils meo-forkcy-proxy meo-forkcy-logger ethers solc
 cd - > /dev/null
 print_green "Dependencies installation completed!"
 
